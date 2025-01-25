@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
 	vim.api.nvim_create_user_command("FormatOpts", function()
-		vim.cmd("ggVGgq")
+		vim.cmd("normal! ggVGgq")
 	end, {})
 
 	vim.api.nvim_create_user_command("HideColumn", function()
