@@ -74,7 +74,6 @@ function M.setup()
 				},
 				sign = { enabled = false },
 			})
-			vim.keymap.set("n", "<leader>hc", "<cmd>Todo<cr>")
 		end
 	end, {})
 end
