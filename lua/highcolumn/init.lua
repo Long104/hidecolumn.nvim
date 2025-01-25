@@ -1,12 +1,11 @@
 local M = {}
 
 function M.setup()
-
-	vim.api.nvim_create_user_command("format", function()
+	vim.api.nvim_create_user_command("FormatOpts", function()
 		vim.cmd("ggVGgq")
 	end, {})
 
-	vim.api.nvim_create_user_command("hideColumn", function()
+	vim.api.nvim_create_user_command("HideColumn", function()
 		local current_number = vim.wo.number
 		local current_relativenumber = vim.wo.relativenumber
 		local current_signcolumn = vim.wo.signcolumn
