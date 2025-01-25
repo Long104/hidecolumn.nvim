@@ -1,13 +1,22 @@
 local M = {}
 
 function M.setup()
-	vim.api.nvim_create_user_command("Todo", function()
+
+	vim.api.nvim_create_user_command("format", function()
+		vim.cmd("ggVGgq")
+	end, {})
+
+	vim.api.nvim_create_user_command("hideColumn", function()
 		local current_number = vim.wo.number
 		local current_relativenumber = vim.wo.relativenumber
 		local current_signcolumn = vim.wo.signcolumn
 		local current_statusline = vim.opt.statusline:get()
+		local textwidth = 35
 
 		-- Toggle the settings
+
+		vim.o.textwidth = textwidth
+		-- vim.opt.formatoptions = "ta"
 		vim.wo.number = not current_number
 		vim.wo.relativenumber = not current_relativenumber
 		vim.wo.signcolumn = current_signcolumn == "yes" and "no" or "yes"
